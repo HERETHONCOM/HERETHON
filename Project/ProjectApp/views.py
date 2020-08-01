@@ -11,11 +11,11 @@ def create(request):
         form = BlogPost(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=True)
-            return redirect('gallery')
+            return redirect('main')
         return render(request, 'new.html', {'form':form})
     else:
         form = BlogPost()
         return render(request, 'new.html', {'form':form})
       
- def art(requests):
+def art(requests):
     return render(requests,'art.html')

@@ -152,13 +152,15 @@
     <a href="../art">#Art</a>
   </div>
 </div>
+{% for blog in post.all %}
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
   <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <a href="index.html">
-      <img src="{% static 'art1.jpg' %}">
+      <img src="{{ blog.image.url }}" alt="bookimg">
     </a>
   </div>
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+  {% endfor %}
+  <!-- <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <a href="index.html">
       <img src="{% static 'art2.jpg' %}">
     </a>
@@ -185,7 +187,7 @@
       <img src="{% static 'art1.jpg' %}">
     </a>
   </div>
-</div>
+</div> -->
 <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
   <div class="tag">
     <a href="index.html">#Computer Engineering</a>
