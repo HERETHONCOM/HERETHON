@@ -16,3 +16,6 @@ def create(request):
     else:
         form = BlogPost()
         return render(request, 'new.html', {'form':form})
+      
+ def art(requests):
+    return render(requests,'art.html')

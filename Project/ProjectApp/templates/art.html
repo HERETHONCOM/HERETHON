@@ -95,24 +95,19 @@
     <div id="mySidenav" class="sidenav"  style=" z-index: 2;">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       {% if user.is_authenticated %}
-        <a style="font-size: 20px; background-color: #949494; color: black;">{{user.username}} 님이 <br>로그인중입니다</a>
-        <hr>
-        <a href="{% url 'new' %}" style="font-size: 20px; background-color: #949494; color: black;">Upload</a>
-      {% else %}
-        <a style="font-size: 20px; background-color: #949494; color: black;">로그인이 필요합니다</a>
+      <a style="font-size: 20px; background-color: #949494; color: black;">{{user.username}} 님이 <br>로그인중입니다.</a>
       {% endif %}
-      <hr style="color: #949494;">
-      <a href="#"># Art</a>
-      <a href="#"># Computer</a>
-      <a href="#"># Media</a>
-      <a href="#"># Performance</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
     </div>
     
     <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
     }
-
+ 
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     }
@@ -122,16 +117,16 @@
         <a class="py-2" href="#" aria-label="Product">
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
         </a>
-        <a class="py-2" href="" aria-label="Product">
+        <a class="py-2" href="../#" aria-label="Product">
           <h5 class="main_title" >Congraduation</h5>
         </a>
-
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
+        <a class="py-2 d-none d-md-inline-block" href="./art.html">Art</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Computer</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Media</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Performance</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">ETC</a>
         {% if user.is_authenticated %}
+           <a class="py-2 d-none d-md-inline-block" href="#">Upload</a>
            <a class="py-2 d-none d-md-inline-block" href="/accounts/logout">Logout</a>
         {% else %}
            <a class="py-2 d-none d-md-inline-block" href="{% provider_login_url 'google' %}">Login</a>
@@ -140,16 +135,10 @@
     </nav>
 
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">Online Graduation Exhibition</h1>
-    <p class="lead font-weight-normal"></p>
-    <a class="btn btn-outline-secondary" href="#">See more</a>
-  </div>
-</div>
+
 <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
   <div class="tag">
-    <a href="../art">#Art</a>
+    <a href="index.html">#Art</a>
   </div>
 </div>
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
@@ -186,28 +175,7 @@
     </a>
   </div>
 </div>
-<div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-  <div class="tag">
-    <a href="index.html">#Computer Engineering</a>
-  </div>
-</div>
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <a href="index.html">
-      <img src="{% static 'art1.jpg' %}">
-    </a>
-  </div>
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <a href="index.html">
-      <img src="{% static 'art2.jpg' %}">
-    </a>
-  </div>
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <a href="index.html">
-      <img src="{% static 'art3.jpg' %}">
-    </a>
-  </div>
-</div>
+
 <footer class="container py-5">
   <div class="row">
     <div class="col-12 col-md">
