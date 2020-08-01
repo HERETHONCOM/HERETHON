@@ -1,5 +1,7 @@
 
 {% load static%}
+{% load socialaccount %}
+{% providers_media_js %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,8 +48,12 @@
     <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
     <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
     <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+    {% if user.is_authenticated %}
+      <a class="py-2 d-none d-md-inline-block" href="/accounts/logout">Logout</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Upload</a>
+    {% else %}
+      <a class="py-2 d-none d-md-inline-block" href="{% provider_login_url 'google' %}">Login</a>
+    {% endif %}
   </div>
 </nav>
 
