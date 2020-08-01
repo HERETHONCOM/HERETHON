@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 def main(request):
     posts = Post.objects
     post_list=Post.objects.all()
-    paginator = Paginator(post_list, 4) # 페이지 나누기 (객체 3개씩)
+    paginator = Paginator(post_list, 2) # 페이지 나누기 (객체 3개씩)
     page = request.GET.get('page') # 요청한 페이지 값
     pages = paginator.get_page(page) # 해당 페이지 가져오기
     return render(request, 'main.html', {'posts':posts, 'pages':pages})
