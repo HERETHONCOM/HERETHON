@@ -23,6 +23,15 @@
 
 
     <style>
+      .main_title {
+        font-size: 30px;
+      }
+      .navbar {
+        font-size: 20px;
+      }
+      .py-2{
+        margin: 0px 30px;
+      }
       .sidenav {
         height: 100%;
         width: 0;
@@ -85,6 +94,9 @@
 
     <div id="mySidenav" class="sidenav"  style=" z-index: 2;">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      {% if user.is_authenticated %}
+      <a style="font-size: 20px; background-color: #949494; color: black;">{{user.username}} 님이 <br>로그인중입니다.</a>
+      {% endif %}
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Clients</a>
@@ -106,16 +118,16 @@
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
         </a>
         <a class="py-2" href="index.html" aria-label="Product">
-          <h5>Congraduation</h5>
+          <h5 class="main_title" >Congraduation</h5>
         </a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Art</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Computer</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Media</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Performance</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">ETC</a>
         {% if user.is_authenticated %}
-           <a class="py-2 d-none d-md-inline-block" href="/accounts/logout">Logout</a>
            <a class="py-2 d-none d-md-inline-block" href="#">Upload</a>
+           <a class="py-2 d-none d-md-inline-block" href="/accounts/logout">Logout</a>
         {% else %}
            <a class="py-2 d-none d-md-inline-block" href="{% provider_login_url 'google' %}">Login</a>
         {% endif %}
