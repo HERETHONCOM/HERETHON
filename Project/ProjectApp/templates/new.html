@@ -4,6 +4,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -17,13 +18,47 @@
     <!-- Bootstrap core CSS -->
 
     <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 
     <style>
+      .card{
+        position: absolute;
+        border-color:#ffffff;
+        top:30%;
+        left: 35%;
+        width : 650px;
+
+        }
+    
+        
+      body{
+          font-family: 'Hanna',sans-serif;
+         
+          
+        }
+      
+      
       .main_title {
         font-size: 30px;
+      }
+      #button{
+        position: absolute;
+        border: 1px solid #190707;
+        background-color: #A4A4A4;
+        color:#ffffff;
+        
+        padding : 5px;
+        top: 83%;
+        left:43%;
+        width:280px;
+        
+
+      }
+      #button:hover{
+          background-color:black;
       }
       .navbar {
         font-size: 20px;
@@ -136,17 +171,19 @@
       </div>
     </nav>
 <br>
-<h1>업로드</h1>
-<div class="card">
-    <h1>Upload your Image</h1>
-    <form method="POST" enctype="multipart/form-data" novalidate>
+<div style="text-align: center;">
+<a style ="font-size: 50px;">Upload your Image</a>
+</div>
+<div class="card"> 
+    <form  method="POST" enctype="multipart/form-data" novalidate>
         {% csrf_token %} 
-        <tabel>
+        <tabel >
             {{form.as_p}}
         </tabel>
         <br>
-        <input type="submit" value="제출하기">
+        
     </form>
 </div>
+<input type="submit" value="제출하기" id = "button">
 </body>
 </html>

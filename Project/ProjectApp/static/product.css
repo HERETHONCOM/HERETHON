@@ -135,12 +135,11 @@ border-bottom-color: black;
 .card {
     text-align: center;
     font-size: 15pt;
-    background-color: rgb(87, 87, 87);
-    color: palegreen;
-    width: 500px;
+    border: 1px solid black;
+    width: 600px;
     display: inherit;
     padding: 50px;
-    margin: 0px auto;
+    margin: 10px auto;
     border: 1px black solid;
     box-shadow: 5px 5px mediumpurple;
     
