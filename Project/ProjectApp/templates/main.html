@@ -85,6 +85,8 @@
           font-size: 3.5rem;
         }
       }
+
+      
     </style>
     <!-- Custom styles for this template -->
 
@@ -152,14 +154,20 @@
     <a href="../art">#Art</a>
   </div>
 </div>
-{% for blog in post.all %}
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <a href="index.html">
-      <img src="{{ blog.image.url }}" alt="bookimg">
-    </a>
-  </div>
-  {% endfor %}
+<br>
+<div class="articles">
+  <div id="columns">
+    {% for posts in pages %}
+    <figure>
+        {% if posts.image %}
+        <img src="{{ posts.image.url }}">
+        {% endif %}
+        <figcaption>{{posts.title}}</figcaption>
+        <hr>
+    </figure>
+    {% endfor %}
+</div>
+</div>
   <!-- <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <a href="index.html">
       <img src="{% static 'art2.jpg' %}">
@@ -188,28 +196,22 @@
     </a>
   </div>
 </div> -->
-<div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-  <div class="tag">
-    <a href="index.html">#Computer Engineering</a>
+<br><br>
+<div style="text-align: center;">
+    {%if pages.has_previous%}
+        <a href="?page=1">First</a>
+        <a href="?page={{pages.previous_page_number}}">Previous</a>
+    {%endif%}
+
+    <span>{{pages.number}}</span>
+    <span>of</span>
+    <span>{{pages.paginator.num_pages}}</span>
+
+    {%if pages.has_next%}
+        <a href="?page={{pages.next_page_number}}">Next</a>
+        <a href="?page={{pages.paginator.num_pages}}">Last</a>
+    {%endif%}
   </div>
-</div>
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <a href="index.html">
-      <img src="{% static 'art1.jpg' %}">
-    </a>
-  </div>
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <a href="index.html">
-      <img src="{% static 'art2.jpg' %}">
-    </a>
-  </div>
-  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <a href="index.html">
-      <img src="{% static 'art3.jpg' %}">
-    </a>
-  </div>
-</div>
 <footer class="container py-5">
   <div class="row">
     <div class="col-12 col-md">
